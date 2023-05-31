@@ -1,7 +1,14 @@
 import React from "react"
-const Item: React.FC<{text: string}> = (props)=>{
+import classes from './TodoItem.module.css';
+const Item: React.FC<{text: string, onRemoveTodo: (event: React.MouseEvent) => void }> = (props)=>{
 
-    return ( <li>{props.text}</li> )
+  
+    return ( <li 
+        className={classes.item} 
+        onClick={props.onRemoveTodo} 
+        >
+             {props.text}
+        </li> )
 
 }
 export default Item;
